@@ -1,0 +1,53 @@
+/* Init */
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Variables */
+:root {
+  --font: "Kumbh Sans", sans-serif;
+  --inspect: solid red 1px;
+}
+
+.light-theme {
+  --clr-bodyBackground: #f4f6f8;
+  --clr-cardBackground: #ffffff;
+  --clr-accent: #5964e0;
+  --clr-headingTxt: #19202d;
+  --clr-infoKeys: #6e8098;
+  --clr-bodyText: #6e8098;
+}
+
+.dark-theme {
+  --clr-bodyBackground: #121721;
+  --clr-cardBackground: #19202d;
+  --clr-accent: #5964e0;
+  --clr-headingTxt: #ffffff;
+  --clr-infoKeys: #6e8098;
+  --clr-bodyText: #9daec2;
+}
+
+/* --- MAIN CSS --- */
+
+body {
+  font-family: var(--font);
+  background-color: var(--clr-bodyBackground);
+  min-height: 100vh;
+}
+
+/* --- MOBILE RESPONSIVE --- */
+
+@media screen and (max-width: 450px) {
+  /* some class */
+}

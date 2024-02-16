@@ -1,3 +1,6 @@
+/* Component Styles Import */
+@import url(../components/Header/header.css);
+
 /* Init */
 *,
 ::after,
@@ -44,6 +47,12 @@ body {
   font-family: var(--font);
   background-color: var(--clr-bodyBackground);
   min-height: 100vh;
+}
+
+main {
+  max-width: 1440px;
+  margin: 0 auto;
+  border: var(--inspect);
 }
 
 /* --- MOBILE RESPONSIVE --- */

@@ -5,7 +5,6 @@ header {
   background-image: url(../../assets/desktop/bg-pattern-header.svg);
   background-repeat: no-repeat;
   background-size: cover;
-  border: var(--inspect);
   display: flex;
   justify-content: space-between;
 
@@ -23,7 +22,7 @@ header {
   }
 
   /* Mobile breakpoint? */
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 450px) {
     height: 135px;
     padding: 30px 25px 0 25px;
     background-image: url(../../assets/mobile/bg-pattern-header.svg);

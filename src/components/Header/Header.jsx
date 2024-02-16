@@ -1,10 +1,11 @@
 import devjobsLogo from "../../assets/logos/devjobs-logo.svg";
+import ThemeSwitch from "../ThemeSwitch/ThemeSwitch";
 
-const Header = () => {
+const Header = ({ toggleTheme }) => {
   return (
     <header>
       <img src={devjobsLogo} className="devjobs-logo" alt="devjobs logo" />
-      <div className="switch">CLR SWITCH</div>
+      <ThemeSwitch toggleTheme={toggleTheme} />
     </header>
   );
 };

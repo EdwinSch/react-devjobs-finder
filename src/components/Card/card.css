@@ -1,0 +1,11 @@
+.card-container {
+  border: var(--inspect);
+  width: 350px;
+  padding: 50px 30px;
+  background-color: var(--clr-cardBackground);
+
+  .card-header {
+    display: flex;
+    font-size: 1rem;
+  }
+}

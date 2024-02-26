@@ -1,16 +1,30 @@
 import { Link } from "react-router-dom";
 
-const Card = ({ id, company, position, postedAt, contract, location }) => {
+const Card = ({
+  id,
+  company,
+  position,
+  postedAt,
+  contract,
+  location,
+  logo,
+  logoBackground,
+}) => {
   return (
-    <div className="card-container">
+    <Link to={`/job/${id}`} className="card-container">
+      <figure
+        className="logo-holder"
+        style={{ backgroundColor: logoBackground }}
+      >
+        <img src={logo} alt={company} />
+      </figure>
       <div className="card-header">
         {postedAt} - {contract}
       </div>
       <h3>{position}</h3>
-
-      {/* TEMP */}
-      <Link to={`/job/${id}`}>SHOW JOB</Link>
-    </div>
+      <p className="company-name">{company}</p>
+      <h4>{location}</h4>
+    </Link>
   );
 };
 

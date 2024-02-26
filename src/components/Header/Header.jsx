@@ -1,4 +1,4 @@
-import devjobsLogo from "../../assets/logos/devjobs-logo.svg";
+import devjobsLogo from "../../assets/devjobs-logo.svg";
 import ThemeSwitch from "../ThemeSwitch/ThemeSwitch";
 
 const Header = ({ toggleTheme }) => {

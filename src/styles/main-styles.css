@@ -25,6 +25,7 @@ ul {
 :root {
   --font: "Kumbh Sans", sans-serif;
   --inspect: solid red 1px;
+  --transition: 250ms ease;
 }
 
 .light-theme {
@@ -51,7 +52,7 @@ body {
   font-family: var(--font);
   background-color: var(--clr-bodyBackground);
   min-height: 100vh;
-  transition: 250ms ease;
+  transition: 200ms ease;
 }
 
 main {
@@ -72,6 +73,7 @@ h2 {
 h3 {
   font-size: 20px;
   line-height: 24px;
+  color: var(--clr-headingTxt);
 }
 
 h4 {

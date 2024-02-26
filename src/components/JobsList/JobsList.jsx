@@ -1,10 +1,9 @@
 import Card from "../Card/Card";
-import jobsData from "../../../api/data.json";
 
-const JobsList = () => {
+const JobsList = ({ jobs }) => {
   return (
     <section className="jobs-list-container">
-      {jobsData.map((item) => {
+      {jobs.map((item) => {
         return <Card key={item.id} {...item} />;
       })}
     </section>

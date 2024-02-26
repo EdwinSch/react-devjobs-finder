@@ -9,7 +9,7 @@ const Card = ({ id, company, position, postedAt, contract, location }) => {
       <h3>{position}</h3>
 
       {/* TEMP */}
-      <Link to={"/"} style={{ display: "block", marginTop: 10 }}>
+      <Link to={`/job/${id}`} style={{ display: "block", marginTop: 10 }}>
         SHOW JOB
       </Link>
     </div>

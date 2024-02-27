@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import jobsData from "../../api/data.json";
 
 import JobInfo from "../components/JobInfo/JobInfo";
+import JobFooter from "../components/JobFooter/JobFooter";
 
 const Job = () => {
   const { jobId } = useParams();
@@ -10,6 +11,7 @@ const Job = () => {
   return (
     <div className="job-page-container">
       <JobInfo selectedJob={selectedJob} />
+      <JobFooter selectedJob={selectedJob} />
     </div>
   );
 };

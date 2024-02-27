@@ -5,6 +5,7 @@
 @import url(../components/JobsList/jobs-list.css);
 @import url(../components/Card/card.css);
 @import url(../components/JobInfo/job-info.css);
+@import url(..//components/JobFooter/job-footer.css);
 
 /* Init */
 *,

@@ -59,7 +59,6 @@ const JobInfo = ({ selectedJob }) => {
           })}
         </ol>
       </div>
-      {/* <Link to={"/"}>back to homepage</Link> */}
     </div>
   );
 };

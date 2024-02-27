@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import jobsData from "../../api/data.json";
 
+import JobHero from "../components/JobHero/JobHero";
 import JobInfo from "../components/JobInfo/JobInfo";
 import JobFooter from "../components/JobFooter/JobFooter";
 
@@ -9,10 +10,15 @@ const Job = () => {
   const selectedJob = jobsData.find((job) => job.id == jobId);
 
   return (
-    <div className="job-page-container">
-      <JobInfo selectedJob={selectedJob} />
+    <>
+      <div className="job-page-container">
+        <div className="float-container">
+          <JobHero selectedJob={selectedJob} />
+        </div>
+        <JobInfo selectedJob={selectedJob} />
+      </div>
       <JobFooter selectedJob={selectedJob} />
-    </div>
+    </>
   );
 };
 export default Job;

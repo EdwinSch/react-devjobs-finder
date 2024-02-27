@@ -11,8 +11,16 @@
 }
 
 .job-page-container {
-  border: solid blue 1px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  /* border: solid blue 1px; */
+  max-width: 730px;
+  margin: 0 auto;
+
+  .float-container {
+    height: 140px;
+    position: relative;
+  }
+
+  @media screen and (max-width: 730px) {
+    padding: 0 20px;
+  }
 }

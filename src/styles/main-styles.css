@@ -4,6 +4,7 @@
 @import url(../components/ThemeSwitch/theme-switch.css);
 @import url(../components/JobsList/jobs-list.css);
 @import url(../components/Card/card.css);
+@import url(../components/JobHero/job-hero.css);
 @import url(../components/JobInfo/job-info.css);
 @import url(..//components/JobFooter/job-footer.css);
 
@@ -29,19 +30,25 @@ a {
 .light-theme {
   --clr-bodyBackground: #f4f6f8;
   --clr-cardBackground: #ffffff;
+  --clr-btn-inverted-background: #eff0fc;
   --clr-accent: #5964e0;
   --clr-headingTxt: #19202d;
   --clr-infoKeys: #6e8098;
   --clr-bodyText: #6e8098;
+  --clr-btn-inverted-txt: #5964e0;
+  --clr-inverted-hover: #c4c8f4;
 }
 
 .dark-theme {
   --clr-bodyBackground: #121721;
   --clr-cardBackground: #19202d;
+  --clr-btn-inverted-background: #303642;
   --clr-accent: #5964e0;
   --clr-headingTxt: #ffffff;
   --clr-infoKeys: #6e8098;
   --clr-bodyText: #9daec2;
+  --clr-btn-inverted-txt: #ffffff;
+  --clr-inverted-hover: #535862;
 }
 
 /* --- MAIN CSS --- */
@@ -66,6 +73,7 @@ h1 {
 h2 {
   font-size: 24px;
   line-height: 29px;
+  color: var(--clr-headingTxt);
 }
 
 h3 {
@@ -104,6 +112,15 @@ h4 {
 
   &:hover {
     background-color: #939bf4;
+  }
+}
+
+.btn-invert {
+  background-color: var(--clr-btn-inverted-background);
+  color: var(--clr-btn-inverted-txt);
+
+  &:hover {
+    background-color: var(--clr-inverted-hover);
   }
 }
 

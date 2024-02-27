@@ -4,6 +4,7 @@
 @import url(../components/ThemeSwitch/theme-switch.css);
 @import url(../components/JobsList/jobs-list.css);
 @import url(../components/Card/card.css);
+@import url(../components/JobInfo/job-info.css);
 
 /* Init */
 *,
@@ -15,10 +16,6 @@
 }
 a {
   text-decoration: none;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
 }
 
 /* Variables */
@@ -79,6 +76,34 @@ h3 {
 h4 {
   font-size: 14px;
   line-height: 18px;
+}
+
+.body-txt {
+  font-size: 1rem;
+  line-height: 26px;
+  font-weight: 400;
+  color: var(--clr-bodyText);
+}
+
+.btn {
+  display: grid;
+  place-items: center;
+  min-width: 140px;
+  height: 50px;
+  background-color: var(--clr-accent);
+  color: #ffffff;
+  font-family: var(--font);
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+
+  &:hover {
+    background-color: #939bf4;
+  }
 }
 
 /* --- MOBILE RESPONSIVE --- */

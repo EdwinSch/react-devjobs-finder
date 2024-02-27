@@ -9,3 +9,9 @@
     color: red;
   }
 }
+
+.job-page-container {
+  border: solid blue 1px;
+  display: flex;
+  justify-content: center;
+}

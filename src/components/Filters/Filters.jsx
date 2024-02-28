@@ -2,10 +2,10 @@ import { IoSearch, IoLocationSharp } from "react-icons/io5";
 import { useState } from "react";
 
 const Filters = () => {
+  // Text/terms Input States
   const [searchTerms, setSearchTerms] = useState({
     multiple: "",
     location: "",
-    fullTime: false,
   });
 
   const handleChange = (event) => {
@@ -14,8 +14,6 @@ const Filters = () => {
       ...searchTerms,
       [event.target.name]: event.target.value,
     });
-
-    console.log(searchTerms);
   };
 
   return (
@@ -23,7 +21,7 @@ const Filters = () => {
       <form action="">
         {/* Multi text filter */}
         <div className="filter-wrapper">
-          <label htmlFor="multiple">
+          <label htmlFor="multiple" className="txt-input-label">
             <IoSearch />
           </label>
           <input
@@ -32,13 +30,13 @@ const Filters = () => {
             onChange={handleChange}
             name="multiple"
             id="multiple"
-            placeholder="Filter by title, companies, expertise…"
+            placeholder="Filter by title, companies…"
           />
         </div>
 
         {/* Location text filter */}
         <div className="filter-wrapper">
-          <label htmlFor="location">
+          <label htmlFor="location" className="txt-input-label">
             <IoLocationSharp />
           </label>
           <input
@@ -49,6 +47,24 @@ const Filters = () => {
             id="location"
             placeholder="Filter by location..."
           />
+        </div>
+
+        {/* Checkbox && Submit  */}
+        <div className="filter-wrapper submit-wrapper">
+          <input
+            type="checkbox"
+            // value={searchTerms.location}
+            // onChange={handleChange}
+            name="fulltime"
+            id="fulltime"
+          />
+          <label htmlFor="fulltime" className="checkbox-label">
+            Full Time Only
+          </label>
+
+          <button className="btn submit-btn" type="submit">
+            Search
+          </button>
         </div>
       </form>
     </div>

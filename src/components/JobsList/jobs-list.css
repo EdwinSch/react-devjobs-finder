@@ -1,6 +1,4 @@
 .jobs-list-container {
-  /* margin-top: 100px; */
-  /* border: var(--inspect); */
   padding: 120px 165px 0 165px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));

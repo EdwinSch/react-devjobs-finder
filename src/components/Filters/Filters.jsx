@@ -6,6 +6,7 @@ const Filters = () => {
   const [searchTerms, setSearchTerms] = useState({
     multiple: "",
     location: "",
+    fulltime: false,
   });
 
   const handleChange = (event) => {
@@ -13,12 +14,26 @@ const Filters = () => {
     setSearchTerms({
       ...searchTerms,
       [event.target.name]: event.target.value,
+      fulltime: event.target.checked,
     });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    if (!searchTerms.multiple) {
+      if (searchTerms.location) {
+        console.log("location = filled");
+      }
+      return;
+    }
+
+    console.log(searchTerms);
   };
 
   return (
     <div className="form-float-container">
-      <form action="">
+      <form onSubmit={handleSubmit}>
         {/* Multi text filter */}
         <div className="filter-wrapper">
           <label htmlFor="multiple" className="txt-input-label">
@@ -53,8 +68,8 @@ const Filters = () => {
         <div className="filter-wrapper submit-wrapper">
           <input
             type="checkbox"
-            // value={searchTerms.location}
-            // onChange={handleChange}
+            checked={searchTerms.fulltime}
+            onChange={handleChange}
             name="fulltime"
             id="fulltime"
           />

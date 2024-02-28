@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import jobsData from "../../api/data.json";
 
 import JobsList from "../components/JobsList/JobsList";
+import Filters from "../components/Filters/Filters";
 
 const Home = () => {
   // ON LOAD Set state
@@ -22,7 +23,7 @@ const Home = () => {
     initialDataLoad();
   }, []);
 
-  // Show/Hide load BTN
+  // Load BTN functions
   const showMore = () => {
     setJobs(jobsData);
     setShowLoadBtn(false);
@@ -30,8 +31,9 @@ const Home = () => {
 
   return (
     <div className="homepage">
+      <Filters />
       <JobsList jobs={jobs} />
-      {/* Load all jobs */}
+
       {showLoadBtn && (
         <button onClick={showMore} className="btn load-btn" type="button">
           load more

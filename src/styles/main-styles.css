@@ -2,6 +2,7 @@
 @import url(../styles/page-styles.css);
 @import url(../components/Header/header.css);
 @import url(../components/ThemeSwitch/theme-switch.css);
+@import url(../components/Filters/filters.css);
 @import url(../components/JobsList/jobs-list.css);
 @import url(../components/Card/card.css);
 @import url(../components/JobHero/job-hero.css);

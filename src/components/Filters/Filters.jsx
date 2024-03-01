@@ -14,7 +14,6 @@ const Filters = () => {
   const handleChange = (event) => {
     setSearchTerms({
       ...searchTerms,
-      // [event.target.name]: event.target.value,
       [event.target.name]: event.target.value.toLowerCase(),
       fulltime: event.target.checked,
     });
@@ -23,24 +22,27 @@ const Filters = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    console.log(searchTerms);
+
     const filterData = jobsData.filter((job) => {
       return (
         (searchTerms.multiple === "" ||
           job.company.toLowerCase().includes(searchTerms.multiple) ||
           job.position.toLowerCase().includes(searchTerms.multiple)) &&
         (searchTerms.location === "" ||
-          job.location.toLowerCase().includes(searchTerms.location))
+          job.location.toLowerCase().includes(searchTerms.location)) &&
+        (!searchTerms.fulltime || job.contract === "Full Time")
       );
     });
-    // Log
-    console.log(filterData);
+
+    // console.log(filterData);
 
     // Clear Inputs
-    // setSearchTerms({
-    //   multiple: "",
-    //   location: "",
-    //   fulltime: false,
-    // });
+    setSearchTerms({
+      multiple: "",
+      location: "",
+      fulltime: false,
+    });
   };
 
   return (

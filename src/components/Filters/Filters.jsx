@@ -1,6 +1,8 @@
 import { IoSearch, IoLocationSharp } from "react-icons/io5";
 import { useState } from "react";
 
+import jobsData from "../../../api/data.json";
+
 const Filters = () => {
   // Text/terms Input States
   const [searchTerms, setSearchTerms] = useState({
@@ -10,10 +12,10 @@ const Filters = () => {
   });
 
   const handleChange = (event) => {
-    //   setInput(event.target.value.toLowerCase());
     setSearchTerms({
       ...searchTerms,
-      [event.target.name]: event.target.value,
+      // [event.target.name]: event.target.value,
+      [event.target.name]: event.target.value.toLowerCase(),
       fulltime: event.target.checked,
     });
   };
@@ -21,14 +23,24 @@ const Filters = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if (!searchTerms.multiple) {
-      if (searchTerms.location) {
-        console.log("location = filled");
-      }
-      return;
-    }
+    const filterData = jobsData.filter((job) => {
+      return (
+        (searchTerms.multiple === "" ||
+          job.company.toLowerCase().includes(searchTerms.multiple) ||
+          job.position.toLowerCase().includes(searchTerms.multiple)) &&
+        (searchTerms.location === "" ||
+          job.location.toLowerCase().includes(searchTerms.location))
+      );
+    });
+    // Log
+    console.log(filterData);
 
-    console.log(searchTerms);
+    // Clear Inputs
+    // setSearchTerms({
+    //   multiple: "",
+    //   location: "",
+    //   fulltime: false,
+    // });
   };
 
   return (
@@ -45,7 +57,7 @@ const Filters = () => {
             onChange={handleChange}
             name="multiple"
             id="multiple"
-            placeholder="Filter by title, companies…"
+            placeholder="Filter by jobtitle or company…"
           />
         </div>
 
@@ -60,7 +72,7 @@ const Filters = () => {
             onChange={handleChange}
             name="location"
             id="location"
-            placeholder="Filter by location..."
+            placeholder="Filter by country..."
           />
         </div>
 

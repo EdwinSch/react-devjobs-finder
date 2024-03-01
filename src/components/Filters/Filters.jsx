@@ -69,7 +69,7 @@ const Filters = ({ setJobs, setShowLoadBtn }) => {
         </div>
 
         {/* Location text filter */}
-        <div className="filter-wrapper">
+        <div className="filter-wrapper country-wrapper">
           <label htmlFor="location" className="txt-input-label">
             <IoLocationSharp />
           </label>
@@ -85,16 +85,18 @@ const Filters = ({ setJobs, setShowLoadBtn }) => {
 
         {/* Checkbox && Submit  */}
         <div className="filter-wrapper submit-wrapper">
-          <input
-            type="checkbox"
-            checked={searchTerms.fulltime}
-            onChange={handleChange}
-            name="fulltime"
-            id="fulltime"
-          />
-          <label htmlFor="fulltime" className="checkbox-label">
-            Full Time Only
-          </label>
+          <div className="checkbox-wrapper">
+            <input
+              type="checkbox"
+              checked={searchTerms.fulltime}
+              onChange={handleChange}
+              name="fulltime"
+              id="fulltime"
+            />
+            <label htmlFor="fulltime" className="checkbox-label">
+              Full Time Only
+            </label>
+          </div>
 
           <button className="btn submit-btn" type="submit">
             Search

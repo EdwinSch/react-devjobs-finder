@@ -5,6 +5,15 @@
   padding: 0 165px;
   width: 100%;
 
+  @media screen and (max-width: 765px) {
+    padding: 0 45px;
+  }
+
+  @media screen and (max-width: 450px) {
+    top: -20px;
+    padding: 0 25px;
+  }
+
   form {
     width: 100%;
     height: 80px;
@@ -15,10 +24,15 @@
     .filter-wrapper {
       border-right: solid 1px #979797;
       height: 100%;
-      width: 100%;
+      width: 40%;
       padding-left: 20px;
       display: flex;
       align-items: center;
+
+      .checkbox-wrapper {
+        display: flex;
+        align-items: center;
+      }
 
       .txt-input-label {
         margin-right: 15px;
@@ -31,6 +45,7 @@
 
       & input[type="text"] {
         width: 100%;
+        height: 100%;
         font-family: var(--font);
         font-size: 1rem;
         color: var(--clr-headingTxt);
@@ -47,7 +62,7 @@
       }
 
       .checkbox-label {
-        margin-left: 10px;
+        margin-left: 6px;
         color: var(--clr-headingTxt);
         font-size: 14px;
         font-weight: 700;
@@ -60,14 +75,68 @@
       }
     }
 
+    .country-wrapper {
+      width: 30%;
+    }
+
     .submit-wrapper {
-      padding: 0 15px 0 30px;
+      padding: 0 15px 0 15px;
+      width: 30%;
       border: none;
-      display: flex;
 
       .submit-btn {
         margin-left: auto;
         min-width: 100px;
+      }
+    }
+
+    @media screen and (max-width: 1170px) {
+      flex-wrap: wrap;
+      height: auto;
+
+      .filter-wrapper {
+        padding: 0 10px;
+        width: 50%;
+        height: 60px;
+        border-bottom: solid 1px #979797;
+
+        .txt-input-label {
+          margin-right: 8px;
+        }
+      }
+
+      .country-wrapper {
+        border-right: none;
+      }
+
+      .submit-wrapper {
+        padding: 15px 10px;
+        width: 100%;
+        height: auto;
+        border: none;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+
+        .submit-btn {
+          margin-left: 0;
+          margin-top: 10px;
+        }
+      }
+    }
+
+    @media screen and (max-width: 450px) {
+      flex-wrap: no-wrap;
+      flex-direction: column;
+
+      .filter-wrapper {
+        width: 100%;
+        border-right: none;
+      }
+
+      .submit-wrapper {
+        justify-content: flex-start;
+        gap: 10px;
       }
     }
   }

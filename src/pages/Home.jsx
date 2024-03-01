@@ -23,7 +23,7 @@ const Home = () => {
     initialDataLoad();
   }, []);
 
-  // Load BTN functions
+  // Load More BTN functions
   const showMore = () => {
     setJobs(jobsData);
     setShowLoadBtn(false);
@@ -31,7 +31,7 @@ const Home = () => {
 
   return (
     <div className="homepage">
-      <Filters />
+      <Filters setJobs={setJobs} setShowLoadBtn={setShowLoadBtn} />
       <JobsList jobs={jobs} />
 
       {showLoadBtn && (

@@ -3,14 +3,15 @@ import { useState } from "react";
 
 import jobsData from "../../../api/data.json";
 
-const Filters = () => {
-  // Text/terms Input States
+const Filters = ({ setJobs, setShowLoadBtn }) => {
+  // Text/searchterms Input State
   const [searchTerms, setSearchTerms] = useState({
     multiple: "",
     location: "",
     fulltime: false,
   });
 
+  // Handle input change
   const handleChange = (event) => {
     setSearchTerms({
       ...searchTerms,
@@ -19,6 +20,7 @@ const Filters = () => {
     });
   };
 
+  // Handle input sumbit
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -34,9 +36,12 @@ const Filters = () => {
         (!searchTerms.fulltime || job.contract === "Full Time")
       );
     });
+    console.log(filterData.length);
 
-    // console.log(filterData);
-
+    // Set Jobs List to Filtered
+    setJobs(filterData);
+    // Do NOT show load more BTN
+    setShowLoadBtn(false);
     // Clear Inputs
     setSearchTerms({
       multiple: "",

@@ -1,27 +1,11 @@
-import { useEffect, useState } from "react";
-import jobsData from "../../api/data.json";
-
 import JobsList from "../components/JobsList/JobsList";
 import Filters from "../components/Filters/Filters";
 
+import { useGlobalContext } from "../context";
+
 const Home = () => {
-  // ON LOAD Set state
-  const [jobs, setJobs] = useState([]);
-  const [showLoadBtn, setShowLoadBtn] = useState(true);
-
-  // Filter array for partial rendering
-  const initialDataLoad = () => {
-    const filterIndexes = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-    const filteredJobs = jobsData.filter((job) =>
-      filterIndexes.includes(job.id)
-    );
-    setJobs(filteredJobs);
-  };
-
-  // Invoke initial load
-  useEffect(() => {
-    initialDataLoad();
-  }, []);
+  const { jobs, setJobs, jobsData, showLoadBtn, setShowLoadBtn } =
+    useGlobalContext();
 
   // Load More BTN functions
   const showMore = () => {

@@ -1,10 +1,13 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
+import jobsData from "../api/data.json";
 
 const AppContext = createContext();
 
 export const AppProvider = ({ children }) => {
   // ---- Global States
   const [theme, setTheme] = useState("light-theme");
+  const [jobs, setJobs] = useState([]);
+  const [showLoadBtn, setShowLoadBtn] = useState(true);
 
   // ---- Global Functions
   const toggleTheme = () => {
@@ -15,12 +18,31 @@ export const AppProvider = ({ children }) => {
     setTheme("light-theme");
   };
 
+  // Filter array for partial rendering
+  const initialDataLoad = () => {
+    const filterIndexes = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    const filteredJobs = jobsData.filter((job) =>
+      filterIndexes.includes(job.id)
+    );
+    setJobs(filteredJobs);
+  };
+
+  //   Invoke initial load
+  useEffect(() => {
+    initialDataLoad();
+  }, []);
+
   return (
     <AppContext.Provider
       value={{
         theme,
         setTheme,
         toggleTheme,
+        jobs,
+        setJobs,
+        jobsData,
+        showLoadBtn,
+        setShowLoadBtn,
       }}
     >
       {children}

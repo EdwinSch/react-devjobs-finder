@@ -1,6 +1,9 @@
 import { MdLightMode, MdDarkMode } from "react-icons/md";
+import { useGlobalContext } from "../../context";
 
-const ThemeSwitch = ({ toggleTheme }) => {
+const ThemeSwitch = () => {
+  const { toggleTheme } = useGlobalContext();
+
   return (
     <label className="toggle">
       <span className="toggle-label">

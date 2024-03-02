@@ -1,27 +1,20 @@
 import Header from "../components/Header/Header";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 
+import { useGlobalContext } from "../context";
+
 const RootLayout = () => {
-  const [theme, setTheme] = useState("light-theme");
+  const { theme } = useGlobalContext();
 
   // Load initial color theme
   useEffect(() => {
     document.documentElement.className = theme;
   }, [theme]);
 
-  // Switch theme function
-  const toggleTheme = () => {
-    if (theme === "light-theme") {
-      setTheme("dark-theme");
-      return;
-    }
-    setTheme("light-theme");
-  };
-
   return (
     <main>
-      <Header toggleTheme={toggleTheme} />
+      <Header />
       <Outlet />
     </main>
   );

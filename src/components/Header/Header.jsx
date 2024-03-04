@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <header>
-      <Link to={"/"}>
+      <Link to={"/"} aria-label="home">
         <img src={devjobsLogo} className="devjobs-logo" alt="devjobs logo" />
       </Link>
       <ThemeSwitch />
